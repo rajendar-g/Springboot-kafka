@@ -31,11 +31,13 @@ jobs:
       run: mvn  clean install
 
     - name: Build & push Docker image
-      uses: mr-smithers-excellent/docker-build-push@v6
+     # uses: mr-smithers-excellent/docker-build-push@v3
+      uses: docker/build-action@v2
       with:
         image: rajendargoud/kafka-github-action
         tags: latest
-        registry: registry-url.io
+       # registry: registry-url.io
+        registry: ghcr.io
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
