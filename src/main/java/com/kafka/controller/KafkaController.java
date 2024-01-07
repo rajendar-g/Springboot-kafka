@@ -12,7 +12,6 @@ public class KafkaController {
     @Autowired
     private MessageProducer messageProducer;
 
-
     @GetMapping("/")
     public String getMessage(@RequestParam("message") String message) {
 
